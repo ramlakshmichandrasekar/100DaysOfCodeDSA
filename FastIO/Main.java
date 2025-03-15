@@ -7,18 +7,21 @@ public class Main {
          Scanner sc = new Scanner(System.in);
         // t = sc.nextInt();
         // while(t-- > 0){
-            long n, m , a;
-            n = sc.nextLong();
-            m = sc.nextLong();
-            a = sc.nextLong();
-            System.out.println(theatreStones(n,m,a));
+            int a, b;
+            a = sc.nextInt();
+            b = sc.nextInt();
+            System.out.println(bearBrothers(a,b));
        // }
     }
 
-    public static long theatreStones(long n , long m , long a){
-        long flagLength = (n + a - 1) / a;
-        long flagWidth = (m + a - 1) / a;
-        return flagLength * flagWidth;
+    public static int bearBrothers(int a, int b){
+        int count = 0;
+        while(a <= b){
+            a *= 3;
+            b *= 2;
+            count++;
+        }
+        return count;
     }
 
 }
