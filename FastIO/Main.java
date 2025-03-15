@@ -2,24 +2,31 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
+    
     public static void main(String args[]){
         //  int t;
-         Scanner sc = new Scanner(System.in);
+         
         // t = sc.nextInt();
         // while(t-- > 0){
-            int a, b;
-            a = sc.nextInt();
-            b = sc.nextInt();
-            System.out.println(bearBrothers(a,b));
+            Scanner sc = new Scanner(System.in);
+            int n,k;
+            n = sc.nextInt();
+            k = sc.nextInt();
+            System.out.println(nextRound(n,k,sc));
        // }
     }
 
-    public static int bearBrothers(int a, int b){
-        int count = 0;
-        while(a <= b){
-            a *= 3;
-            b *= 2;
-            count++;
+    public static int nextRound(int n, int k, Scanner sc){
+        int kthScore = 0, count = 0;
+        for(int i=1;i<=n;i++){
+            int currScore = sc.nextInt();
+            if(i==k){
+                kthScore = currScore;
+            }
+            
+            if(currScore > 0 && currScore >= kthScore){
+                count++;
+            }
         }
         return count;
     }
