@@ -43,4 +43,6 @@ public class FastIO_Template {
         if (b == 0) return a;
         return gcd(b, a % b);
     }
+
+    
 }
